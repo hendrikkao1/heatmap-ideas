@@ -10,7 +10,7 @@ export type HeatmapTableSort<TDatum> = {
   order: "asc" | "desc";
 };
 
-interface HeatmapTableProps<TDatum> {
+export interface HeatmapTableProps<TDatum> {
   children?: (row: HeatmapTableDatum<TDatum>) => React.ReactNode;
   data: HeatmapTableDatum<TDatum>[];
   renderHeader?: (row: HeatmapTableDatum<TDatum>) => React.ReactNode;
@@ -46,7 +46,8 @@ export const HeatmapTable = <TDatum,>({
   );
 };
 
-interface HeatmapTableDataProps extends React.ComponentPropsWithoutRef<"td"> {
+export interface HeatmapTableDataProps
+  extends React.ComponentPropsWithoutRef<"td"> {
   children?: React.ReactNode;
 }
 
@@ -69,7 +70,8 @@ const defaultColorScale = scaleThreshold<number, string>({
   domain: [0.25, 0.5, 0.75, 1],
 });
 
-interface HeatmapCellProps extends React.ComponentPropsWithoutRef<"span"> {
+export interface HeatmapCellProps
+  extends React.ComponentPropsWithoutRef<"span"> {
   children?: React.ReactNode;
   colorScale?: typeof defaultColorScale;
   value: number;

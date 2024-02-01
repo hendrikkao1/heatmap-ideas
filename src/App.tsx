@@ -7,7 +7,7 @@ import {
   HeatmapTableDatum,
   HeatmapTableHeader,
   HeatmapTableSort,
-} from "./Heatmap/HeatmapChur";
+} from "./Heatmap/Heatmap";
 
 interface WithTooltipProps {
   tooltip: string;
@@ -69,7 +69,7 @@ const App = () => {
         {(row) => (
           <>
             <HeatmapTableData>{row.id}</HeatmapTableData>
-            <HeatmapTableData>{row.value}</HeatmapTableData>
+            <HeatmapTableData>{row.value}%</HeatmapTableData>
             <HeatmapTableData>
               <WithTooltip tooltip="This is a tooltip">
                 <HeatmapCell value={heatmapScale(row.customMetric)}>
